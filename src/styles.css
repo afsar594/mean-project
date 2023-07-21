@@ -96,3 +96,38 @@ footer {background-color: #000;color:#fff; padding:20px;}
      display: inline-block;
  }
  .detail-img img{width:100%;}
+
+ /* loader */
+ .loader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:none;
+    transition: opacity 0.75s,visibility 0.75s;
+  }
+  .loader-hidden{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .loader::after{
+    content: '';
+    width: 75px;
+    height: 75px;
+    border: 15px solid #bb3ec6;
+    border-top-color: #47fb47;
+    border-radius: 50%;
+    animation:loader 0.75s ease infinite;
+  }
+  @keyframes loader{
+    from{
+      transform: rotate(0turn);
+    }
+    to{
+      transform: rotate(1turn);
+    }
+  }

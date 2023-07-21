@@ -1,22 +1,25 @@
-<section class="blog-list mtb-40">
+<div *ngIf="loader" class="loader"></div>
+
+<div *ngIf="!loader">
+  <section class="blog-list mtb-40">
     <div class="container">
       <h1>Article List</h1>
       <div class="row">
           <div class="col-md-8">
-            <div class="col-md-12">
+            <div class="col-md-12" *ngFor="let item of items">
                 <div class="blog-box">
                     <div class="row">
                     <div class="col-md-4">
-                  <img src="assets/Shopify_Announcement.PNG" alt="blog1">
+                  <img src="{{item.file}}" alt="blog1">
                 </div>
                 <div class="col-md-8">
-                    <h3>How to add Shopify Announcement bar (without an app)</h3>
-                    <p>by <span>Pradeep Maurya</span></p>
-                    <p>The Shopify announcement bar is an excellent way to promote a special discount offer, a sale, or another type of promotion...</p>
+                    <h3>{{item.name}}</h3>
+                    <p>by <span>{{item.detail}}</span></p>
+                  
                     <a href="/article/1" class="readmore">Read more...</a></div> </div>
             </div>
               </div>
-              <div class="col-md-12">
+              <!-- <div class="col-md-12">
                 <div class="blog-box">
                     <div class="row">
                         <div class="col-md-4">
@@ -80,7 +83,7 @@
                     <p>In the world of software development, MERN Stack is one of the most widely used technological stacks and a web development framework...</p>
                     <a href="/article/6" class="readmore">Read more...</a></div> </div>
                 </div>
-                  </div>
+                  </div> -->
           </div>
           <div class="col-md-4">
             <app-featured-articles></app-featured-articles>
@@ -91,3 +94,7 @@
       </div>
     </div>
   </section>
+
+</div>
+
+

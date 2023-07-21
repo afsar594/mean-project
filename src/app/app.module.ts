@@ -11,7 +11,10 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ArticlesModule } from './articles/articles.module';
 import { StaticpagesModule } from './staticpages/staticpages.module';
 import {AccountModule} from './account/account.module';
- 
+import { AdminModule } from './admin/admin.module';
+import { AdminserviceService } from './admin/adminservice.service';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,13 +26,17 @@ import {AccountModule} from './account/account.module';
   imports: [
     BrowserModule,
     HttpClientModule,
+    
     ArticlesModule,
     StaticpagesModule,
     AccountModule,
+    AdminModule,
+    BrowserAnimationsModule,
+
     AppRoutingModule,
     
   ],
-  providers: [AccountserviceService],
+  providers: [AccountserviceService,AdminserviceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

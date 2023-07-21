@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent {
-
+  loader: boolean=false;
+  constructor(){
+    this.loader=true
+    setTimeout(() => {
+      this.loader=false
+    }, 1000);
+  }
 }

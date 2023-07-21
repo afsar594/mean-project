@@ -5,7 +5,7 @@ import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const routes: Routes = [
   {path:'fileUpload',component:FileUploadComponent},
-  {path:'fileUpload/:id',component:FileUploadComponent},
+  // {path:'fileUpload/:id',component:FileUploadComponent},
 ];
 
 @NgModule({

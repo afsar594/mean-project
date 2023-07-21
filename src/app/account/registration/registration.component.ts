@@ -11,7 +11,16 @@ export class RegistrationComponent implements OnInit {
   regForm: any;
   datasaved :boolean=false;
   massage:any;
-  constructor(private formbuilder: FormBuilder, private accountservice: AccountserviceService) { }
+  loader: boolean=false;
+  constructor(private formbuilder: FormBuilder, private accountservice: AccountserviceService) { 
+   
+
+  this.loader=true
+  setTimeout(() => {
+    this.loader=false
+  }, 1000);
+
+  }
  
   ngOnInit() {
     this.setFormState();
